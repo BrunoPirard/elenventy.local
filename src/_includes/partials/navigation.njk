@@ -1,0 +1,7 @@
+<ul class="menu navigation">
+    {% for page in collections.pages %}
+        <li class="sub-menu">
+            <a href="{{ page.url | url }}">{{ page.data.title }}</a>
+        </li>
+    {% endfor %}
+</ul>

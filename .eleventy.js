@@ -1,12 +1,14 @@
 const dayjs = require("dayjs");
 
+
 module.exports = function (eleventyConfig) {
     // PassTrough
-    eleventyConfig.addPassthroughCopy("./src/images");
-    eleventyConfig.addPassthroughCopy("./src/css");
-    eleventyConfig.addWatchTarget("./src/css");
-    eleventyConfig.addPassthroughCopy("./src/fonts");
+    eleventyConfig.addPassthroughCopy("./src/assets");
+    eleventyConfig.addWatchTarget("./src/assets/css");
+
+
     // Add Date filters
+    //const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     eleventyConfig.addFilter("date", (dateObj) => {
         return dayjs(dateObj).format("D MMMM YYYY");
     });
