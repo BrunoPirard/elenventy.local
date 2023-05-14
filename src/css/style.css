@@ -1,4 +1,4 @@
-/* Global site */
+/* Global template */
 *,
 :after,
 :before {
@@ -73,6 +73,7 @@ body {
         line-height: 1.5;
         text-rendering: optimizeSpeed
 }
+
 /* Header and menu */
 header {
     grid-area: header;
@@ -96,6 +97,7 @@ li.sub-menu {
  margin: 12px;
 }
 
+/* Main css and articles */
 main {
     grid-area: main;
     display: flex;
@@ -111,6 +113,7 @@ article {
     padding: 2rem;
 }
 
+/* Footer */
 footer {
     grid-area: footer;
     display: flex;
@@ -119,7 +122,8 @@ footer {
     height: 4vh;
     background-color: antiquewhite;
 }
-    
+  
+/* Global site custom */
 h1 {
     color: green;
 }

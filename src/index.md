@@ -4,13 +4,8 @@ title: accueil
 layout: base.njk
 ---
 
-## Sous-titre
+## Page d'acceuil uniquement
 
 lorem ipsum c'est très bien
-
-{% for post in collections.posts %}
-
-- [{{ post.data.title }}]({{ post.url | url }})
-  {%- endfor %}
 
 C'est la fin

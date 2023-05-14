@@ -1,5 +1,7 @@
 ---
-title: Post One
+title: Article
+description: Concernant mon article
+keyword: motclé
 ---
 
-This is my first POSTE
+C'est un premier article

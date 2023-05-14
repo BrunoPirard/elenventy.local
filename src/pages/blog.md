@@ -1,6 +1,7 @@
 ---
 title: Blog
-layout: base.njk
+description: Archive des articles
+keyword: nouvelles entreprise
 ---
 
 <h1>Mes Articles</h1>

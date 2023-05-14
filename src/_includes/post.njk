@@ -4,6 +4,4 @@ layout: base.njk
 
 <h1>{{ title }}</h1>
 {{ content | safe }}
-<footer>
-    <p>Publié le {{ page.date.toDateString() }}</p>
-</footer>
+<p>Publié le {{ page.date.toDateString() }}</p>
