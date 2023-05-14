@@ -12,6 +12,11 @@
   "license": "MIT",
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "dayjs": "^1.11.7"
+    "dayjs": "^1.11.7",
+    "markdown-it": "^13.0.1",
+    "markdown-it-bracketed-spans": "^1.0.1",
+    "markdown-it-footnote": "^3.0.3",
+    "markdown-it-link-attributes": "^4.0.1",
+    "markdown-it-prism": "^2.3.0"
   }
 }
