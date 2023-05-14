@@ -1,0 +1,12 @@
+<header class="page-header">
+    <a href="/">
+        <h1>Nom du site</h1>
+    </a>
+    <ul class="menu">
+        {% for page in collections.pages %}
+            <li class="sub-menu">
+                <a href="{{ page.url | url }}">{{ page.data.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</header>
