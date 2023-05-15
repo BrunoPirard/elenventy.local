@@ -1,7 +1,15 @@
-<ul class="menu navigation">
-    {% for page in collections.pages %}
+{% set currentUrl = page.url %}
+<nav>
+    <ul role="list" class="menu navigation">
         <li class="sub-menu">
-            <a href="{{ page.url | url }}">{{ page.data.title }}</a>
+            <a {% if currentUrl === '/' %} aria-current="page" {% endif %} href="/">Accueil</a>
         </li>
-    {% endfor %}
-</ul>
+        {% for link in collections.pages %}
+            <li class="sub-menu">
+                <a {% if currentUrl === link.url %} aria-current="page" {% endif %} href="{{ link.url }}">
+                    {{ link.data.title }}
+                </a>
+            </li>
+        {%- endfor %}
+    </ul>
+</nav>

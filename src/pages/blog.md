@@ -5,7 +5,8 @@ keyword: nouvelles entreprise
 ---
 
 <h1>Mes Articles</h1>
-{% for post in collections.posts %}
-
-- [{{ post.data.title }}]({{ post.url | url }})
-  {%- endfor %}
+<ul role="list" class="article__list">
+    {% for post in collections.posts | reverse %}
+        {% include 'partials/post-archive.njk' %}
+    {%- endfor %}
+</ul>

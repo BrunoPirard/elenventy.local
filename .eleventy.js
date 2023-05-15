@@ -4,11 +4,13 @@ const dayjs = require('dayjs');
 module.exports = function (eleventyConfig) {
     // PassTrough
     eleventyConfig.addPassthroughCopy("./src/assets");
-    eleventyConfig.addWatchTarget("./src/assets/css");
+    eleventyConfig.addWatchTarget("./src/assets/sass");
 
-    //eleventyConfig.addPlugin(svgContents)
+    
+  //eleventyConfig.addPlugin(svgContents)
 
     // Add Date filters
+    eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
     //const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     eleventyConfig.addFilter("date", (dateObj) => {
         return dayjs(dateObj).format("D MMMM YYYY");
@@ -61,13 +63,17 @@ module.exports = function (eleventyConfig) {
             output: "public",
         },
         templateFormats: [
-      'html',
-      'md',
-      'njk',
-      '11ty.js'
-    ],
-    htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk",
-    passthroughFileCopy: true,
+          'html',
+          'md',
+          'njk',
+          '11ty.js'
+          ],
+        htmlTemplateEngine: "njk",
+        markdownTemplateEngine: "njk",
+        passthroughFileCopy: true,
+        plugins: [
+    require('postcss-jit-props')({files: ['./props.css']}),
+    require('autoprefixer'),
+  ],
     };
 };

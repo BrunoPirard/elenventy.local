@@ -45,6 +45,6 @@
         <link rel="preload" href="/css/{{ csshash.indexCSS }}" as="style"/>
         <link rel="stylesheet" href="/css/{{ csshash.indexCSS }}" type="text/css"/>
     {% else %}
-        <link rel="stylesheet" href="/assets/css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}" type="text/css"/>
     {% endif %}
 </head>

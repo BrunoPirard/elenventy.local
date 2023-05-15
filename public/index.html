@@ -34,7 +34,7 @@
     <link rel="icon" type="image/png" href="/assets/images/icons/Eleventy-favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="/assets/images/icons/Eleventy-favicon-96x96.png" sizes="96x96"/>
     
-        <link rel="stylesheet" href="/assets/css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="/assets/css/main.css" type="text/css"/>
     
 </head>
     <body>
@@ -43,32 +43,53 @@
         <img src="/assets/images/icons/favicon.png" width="75px" alt="">
             <h1></h1>
         </a>
-        <ul class="menu navigation">
-    
+        
+<nav>
+    <ul role="list" class="menu navigation">
         <li class="sub-menu">
-            <a href="/pages/about-us/">À propos</a>
+            <a  aria-current="page"  href="/">Accueil</a>
         </li>
-    
-        <li class="sub-menu">
-            <a href="/pages/contact/">Contact</a>
-        </li>
-    
-        <li class="sub-menu">
-            <a href="/pages/blog/">Blog</a>
-        </li>
-    
-</ul>
+        
+            <li class="sub-menu">
+                <a  href="/pages/about-us/">
+                    À propos
+                </a>
+            </li>
+            <li class="sub-menu">
+                <a  href="/pages/contact/">
+                    Contact
+                </a>
+            </li>
+            <li class="sub-menu">
+                <a  href="/pages/blog/">
+                    Blog
+                </a>
+            </li>
+    </ul>
+</nav>
     </header>
         <main>
             <article>
                 <h2>Page d'acceuil uniquement</h2>
 <p>lorem ipsum c'est très bien</p>
 <p>C'est la fin</p>
+<h3>Derniers articles</h3>
+<div class="featured__front">
+<ul role="list" class="article__list">
+<p><li>
+<h2>Serpent à la maison</h2>
+<img src="/assets/images/image.webp" alt="Mon serpent" width="500px">
+<p>Concernant mon serpent dans le jardin</p>
+<a href="/posts/2023-05-04-post-1/" class="btn btn-primary">Lire plus</a></p>
+</li>
+</ul>
+</div>
 
             </article>
         </main>
         <footer class="page-footer">
-    &#169; Copyright 2023 BulgaWeb
+    &#169; Copyright 2023
+    BulgaWeb - Tous droits réservés
 </footer>
     </body>
 </html>
