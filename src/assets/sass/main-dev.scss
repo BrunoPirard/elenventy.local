@@ -45,6 +45,11 @@
         url('../fonts/oxygen-v15-latin-ext-700.woff') format('woff');
     /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+/* Fix OpenProps Box Shadow */
+html {
+    --shadow-strength: 1%;
+    --shadow-color: 220 3% 15%;
+}
 
 body {
     display: grid;
@@ -69,7 +74,6 @@ header {
     padding-right: 6%;
     display: flex;
     justify-content: space-between;
-    ;
     align-items: center;
     height: 10vh;
     background-color: var(--purple-3);
@@ -85,6 +89,16 @@ li.sub-menu {
     margin: 12px;
 }
 
+a {
+    color: var(--teal-10);
+    text-decoration: none;
+    font-weight: var(--font-weight-6);
+}
+
+[aria-current]:not([aria-current="false"]) {
+    font-weight: bold;
+}
+
 /* Main css and articles */
 main {
     grid-area: main;
@@ -98,7 +112,7 @@ main {
 article {
     width: 100%;
     max-width: 1280px;
-    padding: 2rem;
+    padding: var(--size-fluid-4);
 }
 
 /* Footer */
@@ -113,5 +127,50 @@ footer {
 
 /* Global site custom */
 h1 {
-    color: var(--green-12);
+    font-size: var(--font-size-fluid-3);
+    font-weight: var(--font-weight-6);
+    line-height: var(--font-lineheight-6);
+}
+
+h2 {
+    font-size: var(--font-size-fluid-2);
+    font-weight: var(--font-weight-6);
+    line-height: var(--font-lineheight-5);
+}
+
+h3 {
+    font-size: var(--font-size-fluid-1);
+    font-weight: var(--font-weight-5);
+    line-height: var(--font-lineheight-4);
+}
+
+h4 {
+    font-size: var(--font-size-fluid-0);
+    font-weight: var(--font-weight-4);
+    line-height: var(--font-lineheight-3);
+}
+
+p {
+    color: var(--gray-11);
+    font-size: var(--font-size-fluid-0);
+    font-weight: var(--font-weight-4);
+    line-height: var(--font-lineheight-3);
+}
+
+.btn {
+    color: var(--gray-0);
+    background-color: var(--teal-10);
+    text-decoration: none;
+    font-weight: var(--font-weight-6);
+    margin-top: var(--size-fluid-2);
+    margin-bottom: var(--size-fluid-2);
+    padding: var(--size-fluid-1);
+}
+.btn:hover {
+    animation: var(--animation-pulse) forwards;
+}
+
+.card {
+    background-color: var(--teal-0);
+    margin: var(--size-fluid-3);
 }
