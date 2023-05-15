@@ -1,3 +1,12 @@
+@use "variables";
+@use "reset";
+@use "desktop";
+@use "mobile";
+@import "https://unpkg.com/open-props/open-props.min.css";
+/* optional imports that use the props */
+/* @import "https://unpkg.com/open-props/normalize.min.css";*/
+@import "https://unpkg.com/open-props/buttons.min.css";
+
 /* oxygen-300 - latin-ext */
 @font-face {
     font-display: swap;
@@ -47,7 +56,62 @@ body {
         "footer footer footer footer";
     min-height: 100vh;
     font-family: 'Oxygen';
-    line-height: 1.5;
+    font-size: var(--font-size-fluid-0);
+    line-height: var(--font-lineheight-3);
     text-rendering: optimizeSpeed;
-    color:chartreuse;
+    background-color: var(--blue-1);
+}
+
+/* Header and menu */
+header {
+    grid-area: header;
+    padding-left: 6%;
+    padding-right: 6%;
+    display: flex;
+    justify-content: space-between;
+    ;
+    align-items: center;
+    height: 10vh;
+    background-color: var(--purple-3);
+}
+
+ul.menu {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+
+li.sub-menu {
+    margin: 12px;
+}
+
+/* Main css and articles */
+main {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 86vh;
+    background-color: var(--green-0);
+}
+
+article {
+    width: 100%;
+    max-width: 1280px;
+    padding: 2rem;
+}
+
+/* Footer */
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4vh;
+    background-color: var(--purple-3);
+}
+
+/* Global site custom */
+h1 {
+    color: var(--green-12);
 }

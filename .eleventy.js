@@ -3,11 +3,15 @@ const dayjs = require('dayjs');
 
 module.exports = function (eleventyConfig) {
     // PassTrough
-    eleventyConfig.addPassthroughCopy("./src/assets");
+    eleventyConfig.addPassthroughCopy('robots.txt')
+    eleventyConfig.addPassthroughCopy("./src/assets/fonts");
+    eleventyConfig.addPassthroughCopy("./src/assets/images");
+    eleventyConfig.addPassthroughCopy("./src/assets/js");
+    //eleventyConfig.addPassthroughCopy("./src/assets");
     eleventyConfig.addWatchTarget("./src/assets/sass");
 
     
-  //eleventyConfig.addPlugin(svgContents)
+    //eleventyConfig.addPlugin(svgContents)
 
     // Add Date filters
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
@@ -56,11 +60,33 @@ module.exports = function (eleventyConfig) {
      //       return a.data.order - b.data.order;
       //      });
       //  });
+  //   const postcss = require("postcss");
+  // const postcssMinify = require("postcss-minify");
+  // eleventyConfig.addPlugin(bundlerPlugin, {
+  //   transforms: [
+  //     async function (content) {
+  //       // this.type returns the bundle name.
+  //       if (this.type === "css") {
+  //         // Same as Eleventy transforms, this.page is available here.
+  //         let result = await postcss([postcssMinify]).process(content, {
+  //           from: this.page.inputPath,
+  //           to: null,
+  //         });
+  //         return result.css;
+  //       }
 
+  //       return content;
+  //     },
+  //   ],
+  // });
+  
     return {
         dir: {
             input: "src",
             output: "public",
+            includes: "_includes",
+            //layouts: "_layouts",
+            data: "_data",
         },
         templateFormats: [
           'html',
@@ -72,8 +98,8 @@ module.exports = function (eleventyConfig) {
         markdownTemplateEngine: "njk",
         passthroughFileCopy: true,
         plugins: [
-    require('postcss-jit-props')({files: ['./props.css']}),
-    require('autoprefixer'),
-  ],
+          require('postcss-jit-props')({files: ['./props.css']}),
+          require('autoprefixer'),
+        ],
     };
 };

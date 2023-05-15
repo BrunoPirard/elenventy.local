@@ -1,4 +1,4 @@
 ---
 permalink: /sitemap.xml
-layout: sitemap
+layout: sitemap.njk
 ---
