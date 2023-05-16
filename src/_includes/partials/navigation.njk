@@ -1,14 +1,10 @@
-{% set currentUrl = page.url %}
+{{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+{% set navPages = collections.all | eleventyNavigation %}
 <nav>
     <ul role="list" class="menu navigation">
-        <li class="sub-menu">
-            <a {% if currentUrl === '/' %} aria-current="page" {% endif %} href="/">Accueil</a>
-        </li>
-        {% for link in collections.pages %}
-            <li class="sub-menu">
-                <a {% if currentUrl === link.url %} aria-current="page" {% endif %} href="{{ link.url }}">
-                    {{ link.data.title }}
-                </a>
+        {%- for entry in navPages %}
+            <li {% if entry.url == page.url %} class="menu active-page" {% endif %}>
+                <a href="{{ entry.url }}">{{ entry.title }}</a>
             </li>
         {%- endfor %}
     </ul>

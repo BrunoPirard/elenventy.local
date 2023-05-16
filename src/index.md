@@ -1,7 +1,10 @@
 ---
 sitetitle: Mon site de base
-title: accueil
+title: Accueil
 layout: base.njk
+eleventyNavigation:
+  key: Accueil
+  order: 0
 ---
 
 ## Page d'acceuil uniquement

@@ -1,21 +1,20 @@
 
 const dayjs = require('dayjs');
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function (eleventyConfig) {
+
+    eleventyConfig.addPlugin(eleventyNavigationPlugin);
     // PassTrough
     eleventyConfig.addPassthroughCopy('robots.txt')
     eleventyConfig.addPassthroughCopy("./src/assets/fonts");
     eleventyConfig.addPassthroughCopy("./src/assets/images");
     eleventyConfig.addPassthroughCopy("./src/assets/js");
-    //eleventyConfig.addPassthroughCopy("./src/assets");
     eleventyConfig.addWatchTarget("./src/assets/sass");
-
-    
-    //eleventyConfig.addPlugin(svgContents)
 
     // Add Date filters
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
-    //const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
     eleventyConfig.addFilter("date", (dateObj) => {
         return dayjs(dateObj).format("D MMMM YYYY");
     });
@@ -55,11 +54,12 @@ module.exports = function (eleventyConfig) {
     });
 
     // Add pages collection
-   //     eleventyConfig.addCollection("pages", function (collections) {
-    //        return collections.getFilteredByTag("page").sort(function (a, b) {
-     //       return a.data.order - b.data.order;
-      //      });
-      //  });
+    //eleventyConfig.addCollection("pages", function (collections) {
+    //  return collections.getFilteredByTag("page").sort(function (a, b) {
+    //    return a.data.order - b.data.order;
+    //    });
+    //});
+
   //   const postcss = require("postcss");
   // const postcssMinify = require("postcss-minify");
   // eleventyConfig.addPlugin(bundlerPlugin, {
@@ -85,9 +85,9 @@ module.exports = function (eleventyConfig) {
             input: "src",
             output: "public",
             includes: "_includes",
-            //layouts: "_layouts",
+            layouts: "_layouts",
             data: "_data",
-        },
+          },
         templateFormats: [
           'html',
           'md',

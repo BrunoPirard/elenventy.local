@@ -1,8 +1,9 @@
 ---
 title: Blog
 description: Archive des articles
-keyword: nouvelles entreprise
-menu-order: 2
+eleventyNavigation:
+  key: Blog
+  order: 2
 ---
 
 <h1>Mes Articles</h1>

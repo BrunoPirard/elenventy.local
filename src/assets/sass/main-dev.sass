@@ -1,0 +1,118 @@
+//@use '_variables'
+@use '_reset'
+@use '_desktop'
+@use '_mobile'
+@import url(https://unpkg.com/open-props/open-props.min.css)
+@import url(hhttps://unpkg.com/open-props/buttons.min.css)
+
+@font-face
+    font-display: swap
+    font-family: 'Oxygen'
+    font-style: normal
+    font-weight: 300
+    src: url('../fonts/oxygen-v15-latin-ext-300.woff2') format('woff2'),
+    src: url('../fonts/oxygen-v15-latin-ext-300.woff') format('woff')
+@font-face
+    font-display: swap
+    font-family: 'Oxygen'
+    font-style: normal
+    font-weight: 400
+    src: url('../fonts/oxygen-v15-latin-ext-regular.woff2') format('woff2'),
+    src: url('../fonts/oxygen-v15-latin-ext-regular.woff') format('woff')
+@font-face
+    font-display: swap
+    font-family: 'Oxygen'
+    font-style: normal
+    font-weight: 700
+    src: url('../fonts/oxygen-v15-latin-ext-700.woff2') format('woff2'),
+    src: url('../fonts/oxygen-v15-latin-ext-700.woff') format('woff')
+html
+    --shadow-strength: 1%
+    --shadow-color: 220 3% 15%
+body
+    display: grid
+    grid-template-columns: repeat(4, minmax(0, 1fr))
+    grid-template-rows: auto
+    grid-template-areas: "header header header header" "main main main main" "footer footer footer footer"
+    min-height: 100vh
+    font-family: 'Oxygen'
+    font-size: var(--font-size-fluid-0)
+    line-height: var(--font-lineheight-3)
+    text-rendering: optimizeSpeed
+    background-color: var(--blue-1)
+header
+    grid-area: header
+    padding-left: 6%
+    padding-right: 6%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 10vh
+    background-color: var(--purple-3)
+ul
+    &.menu
+        list-style-type: none
+        display: flex
+        flex-direction: row
+li
+    &.menu
+        margin: 12px
+    &.menu &.active-page
+        font-weight: bold
+a
+    color: var(--teal-10)
+    text-decoration: none
+    font-weight: var(--font-weight-6)
+
+main
+    grid-area: main
+    display: flex
+    justify-content: center
+    align-items: flex-start
+    min-height: 86vh
+    background-color: var(--green-0)
+article
+    width: 100%
+    max-width: 1280px
+    padding: var(--size-fluid-4)
+footer
+    grid-area: footer
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 4vh
+    background-color: var(--purple-3)
+h1
+    font-size: var(--font-size-fluid-3)
+    font-weight: var(--font-weight-6)
+    line-height: var(--font-lineheight-6)
+h2
+    font-size: var(--font-size-fluid-2)
+    font-weight: var(--font-weight-6)
+    line-height: var(--font-lineheight-5)
+h3
+    font-size: var(--font-size-fluid-1)
+    font-weight: var(--font-weight-5)
+    line-height: var(--font-lineheight-4)
+h4
+    font-size: var(--font-size-fluid-0)
+    font-weight: var(--font-weight-4)
+    line-height: var(--font-lineheight-3)
+p
+    color: var(--gray-11)
+    font-size: var(--font-size-fluid-0)
+    font-weight: var(--font-weight-4)
+    line-height: var(--font-lineheight-3)
+.btn
+    color: var(--gray-0)
+    background-color: var(--teal-10)
+    text-decoration: none
+    font-weight: var(--font-weight-6)
+    margin-top: var(--size-fluid-2)
+    margin-bottom: var(--size-fluid-2)
+    padding: var(--size-fluid-1)
+    &:hover
+        animation: var(--animation-pulse) forwards
+.card
+    background-color: var(--teal-0)
+    margin: var(--size-fluid-3)
