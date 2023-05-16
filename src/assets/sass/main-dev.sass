@@ -49,15 +49,13 @@ header
     align-items: center
     height: 10vh
     background-color: var(--purple-3)
-ul
-    &.menu
-        list-style-type: none
-        display: flex
-        flex-direction: row
-li
-    &.menu
+ul.menu
+    list-style-type: none
+    display: flex
+    flex-direction: row
+    >li
         margin: 12px
-    &.menu &.active-page
+    >li .active-page
         font-weight: bold
 a
     color: var(--teal-10)
