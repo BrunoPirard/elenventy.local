@@ -4,5 +4,17 @@ layout: base.njk
 
 <h1>{{ title }}</h1>
 <img src="{{ image }}" alt="{{ imageAlt }}" width="500px">
-<div class="contenu">{{ content | safe }}</div>
-<p>Publié par {{ author }} le {{ post.date | date }}</p>
+    <div class="contenu">{{ content | safe }}</div>
+    <p>Publié par {{ author }} le {{ post.date | date }}</p>
+    {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+    {% if previousPost %}
+        <p>Précédent
+            <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
+        </p>
+    {% endif %}
+    {% set nextPost = collections.posts | getNextCollectionItem(page) %}
+    {% if nextPost %}
+        <p>Suivant
+            <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+        </p>
+    {% endif %}

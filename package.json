@@ -4,9 +4,9 @@
   "description": "Template for using Eleventy",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "sass --no-source-map --watch src/assets/sass/main-dev.sass:public/assets/css/main.css",
+    "watch:sass": "sass --no-source-map --watch src/assets/sass/main-dev.scss:public/assets/css/main.css",
     "watch:eleventy": "eleventy --serve",
-    "build:sass": "sass --no-source-map src/assets/sass/main-prod.sass:public/assets/css/main.css",
+    "build:sass": "sass --no-source-map src/assets/sass/main-prod.scss:public/assets/css/main.css",
     "build:eleventy": "eleventy",
     "postbuild": "postcss public/assets/css/main.css -o public/assets/css/main.css",
     "start": "npm-run-all --parallel watch:*",
