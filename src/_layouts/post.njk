@@ -5,7 +5,7 @@ layout: base.njk
 <h1>{{ title }}</h1>
 <img src="{{ image }}" alt="{{ imageAlt }}" width="500px">
     <div class="contenu">{{ content | safe }}</div>
-    <p>Publié par {{ author }} le {{ post.date | date }}</p>
+    <p>Publié par {{ author }} le {{ page.date | date }}</p>
     {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
     {% if previousPost %}
         <p>Précédent

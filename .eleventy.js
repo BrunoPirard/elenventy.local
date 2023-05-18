@@ -1,5 +1,6 @@
 
 const dayjs = require('dayjs');
+const languageFrench = require('dayjs/locale/fr');
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function (eleventyConfig) {
@@ -16,7 +17,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
     eleventyConfig.addFilter("date", (dateObj) => {
-        return dayjs(dateObj).format("D MMMM YYYY");
+        return dayjs(dateObj).locale(languageFrench).format("D MMMM YYYY");
     });
 
     eleventyConfig.addFilter("sitemapDate", (dateObj) => {
@@ -80,7 +81,7 @@ module.exports = function (eleventyConfig) {
   //   ],
   // });
   
-    return {
+    return {     
         dir: {
             input: "src",
             output: "public",
@@ -97,6 +98,7 @@ module.exports = function (eleventyConfig) {
         htmlTemplateEngine: "njk",
         markdownTemplateEngine: "njk",
         passthroughFileCopy: true,
+        locale: "fr",
         plugins: [
           require('postcss-jit-props')({files: ['./props.css']}),
           require('autoprefixer'),
