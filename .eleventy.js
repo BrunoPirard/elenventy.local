@@ -2,6 +2,9 @@
 const dayjs = require('dayjs');
 const languageFrench = require('dayjs/locale/fr');
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+const fs = require("fs");
 
 module.exports = function (eleventyConfig) {
 
@@ -26,6 +29,24 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addFilter("year", () => {
         return dayjs().format("YYYY");
+    });
+
+    // Override Browsersync defaults (used only with --serve)
+    eleventyConfig.setBrowserSyncConfig({
+      callbacks: {
+        ready: function(err, browserSync) {
+          const content_404 = fs.readFileSync('_site/404.html');
+
+          browserSync.addMiddleware("*", (req, res) => {
+            // Provides the 404 content without redirect.
+            res.writeHead(404, {"Content-Type": "text/html; charset=UTF-8"});
+            res.write(content_404);
+            res.end();
+          });
+        },
+      },
+      ui: false,
+      ghostMode: false
     });
 
     /* Markdown plugins */
@@ -61,25 +82,25 @@ module.exports = function (eleventyConfig) {
     //    });
     //});
 
-  //   const postcss = require("postcss");
-  // const postcssMinify = require("postcss-minify");
-  // eleventyConfig.addPlugin(bundlerPlugin, {
-  //   transforms: [
-  //     async function (content) {
-  //       // this.type returns the bundle name.
-  //       if (this.type === "css") {
-  //         // Same as Eleventy transforms, this.page is available here.
-  //         let result = await postcss([postcssMinify]).process(content, {
-  //           from: this.page.inputPath,
-  //           to: null,
-  //         });
-  //         return result.css;
-  //       }
+    // const postcss = require("postcss");
+    // const postcssMinify = require("postcss-minify");
+    // eleventyConfig.addPlugin(bundlerPlugin, {
+    //   transforms: [
+    //     async function (content) {
+    //       // this.type returns the bundle name.
+    //       if (this.type === "css") {
+    //         // Same as Eleventy transforms, this.page is available here.
+    //         let result = await postcss([postcssMinify]).process(content, {
+    //           from: this.page.inputPath,
+    //           to: null,
+    //         });
+    //         return result.css;
+    //       }
 
-  //       return content;
-  //     },
-  //   ],
-  // });
+    //       return content;
+    //     },
+    //   ],
+    // });
   
     return {     
         dir: {

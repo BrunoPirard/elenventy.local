@@ -3,4 +3,5 @@
     <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}" width="500px">
     <p>{{ post.data.description }}</p>
     <a href="{{ post.url | url }}" class="btn btn-primary">Lire plus</a>
+    <p>Publié le {{ post.data.date | date }}</p>
 </li>
