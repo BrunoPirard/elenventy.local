@@ -1,6 +1,6 @@
 ---
 title: Blog
-description: Archive des articles
+description: Blog des articles
 eleventyNavigation:
   key: Blog
   order: 2
