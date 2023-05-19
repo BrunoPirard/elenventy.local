@@ -7,11 +7,9 @@ eleventyNavigation:
   order: 0
 ---
 
-## Page d'acceuil uniquement
+<h1>Page d'acceuil uniquement</h1>
 
 lorem ipsum c'est très bien
-
-C'est la fin
 
 ### Derniers articles
 

@@ -4,10 +4,11 @@
 //@use "theme";
 //@use "desktop";
 //@use "mobile";
-@import "https://unpkg.com/open-props/open-props.min.css";
+@import "https://unpkg.com/open-props";
 /* optional imports that use the props */
-/* @import "https://unpkg.com/open-props/normalize.min.css";*/
-@import "https://unpkg.com/open-props/buttons.min.css";
+@import "https://unpkg.com/open-props/normalize.min.css";
+//@import "https://unpkg.com/open-props/buttons.min.css";
+//@import "https://unpkg.com/open-props/masks.edges.min.css";
 
 /* oxygen-300 - latin-ext */
 @font-face {
@@ -159,20 +160,47 @@ p {
     line-height: var(--font-lineheight-3);
 }
 
+// .btn {
+//     color: var(--gray-0);
+//     background-color: var(--teal-10);
+//     text-decoration: none;
+//     font-weight: var(--font-weight-6);
+//     margin-top: var(--size-fluid-2);
+//     margin-bottom: var(--size-fluid-2);
+//     padding: var(--size-fluid-1);
+// }
 .btn {
+    background: var(--teal-10);
+    border: 2px solid var(--clr2);
     color: var(--gray-0);
-    background-color: var(--teal-10);
-    text-decoration: none;
+    border-radius: var(--radius-2);
     font-weight: var(--font-weight-6);
-    margin-top: var(--size-fluid-2);
-    margin-bottom: var(--size-fluid-2);
-    padding: var(--size-fluid-1);
+    padding: var(--size-2);
+    max-width: max-content;
 }
 .btn:hover {
     animation: var(--animation-pulse) forwards;
 }
 
 .card {
-    background-color: var(--teal-0);
-    margin: var(--size-fluid-3);
+    width: 100%;
+    border-radius: var(--radius-2);
+    padding: var(--size-fluid-3);
+    box-shadow: var(--shadow-2);
+
+    &:hover {
+        box-shadow: var(--shadow-3);
+    }
+
+    @media (--motionOK) {
+        animation: var(--animation-fade-in);
+    }
+}
+
+.flex-2 {
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
 }

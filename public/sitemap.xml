@@ -57,4 +57,12 @@
                 0.8
             </priority>
         </url>
+        
+        <url>
+            <loc>/feed/</loc>
+            <lastmod>2023-05-19T08:03:15.628Z</lastmod>
+            <priority>
+                0.8
+            </priority>
+        </url>
 </urlset>

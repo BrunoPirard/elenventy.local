@@ -1,7 +1,15 @@
 <li>
-    <h2>{{ post.data.title }}</h2>
-    <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}" width="500px">
-    <p>{{ post.data.description }}</p>
-    <a href="{{ post.url | url }}" class="btn btn-primary">Lire plus</a>
-    <p>Publié le {{ post.data.date | date }}</p>
+    <article>
+        <div class="card flex-2">
+            <div>
+                <h2>{{ post.data.title }}</h2>
+                <p>{{ post.data.description }}</p>
+                <a href="{{ post.url | url }}" class="btn">Lire plus</a>
+                <p>Publié le {{ post.data.date | date }}</p>
+            </div>
+            <div>
+                <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}" width="500px">
+            </div>
+        </div>
+    </article>
 </li>
